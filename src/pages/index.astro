@@ -1,10 +1,11 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Progect from '../components/CardProgect.astro';
 import Footer from '../components/Footer.astro';
-import Logo from '../img/Astro ubuntu.png'
-import Image from 'astro/components/Image.astro';
+import TitleIndex from '../components/tittleIndex.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Contact from '../components/contact.astro';
 ---
 
 <!doctype html>
@@ -13,20 +14,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
+		<Header id="header" />
+		<TitleIndex />
 		<main>
-			<div id="title"><Image src={Logo} alt="Astro's theme logo" height={100}/><h1>{SITE_TITLE}!</h1></div>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ad consequatur id optio modi facere deserunt 
-			ullam, porro veritatis architecto quos quae consequuntur harum eaque quasi culpa quas vitae ipsum.</p>
+			<div class="section" id="SMi">
+			<h2>Abaut Me</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempore aperiam, at reiciendis soluta cum ab porro natus amet hic quibusdam, rem labore aliquam iste voluptatum. Suscipit voluptatem repellendus tempora!</p>
+			</div>
+			<Progect />
+			<div class="section">
+			<Contact />
+			</div>
 		</main>
-		<Footer />
+			<Footer />
 	</body>
 </html>
 
 <style>
-	#title{
-		display: flex;
-		flex-direction: row;
+	.section{
+		border-top: 3px solid #E95420;
+		padding-top: 1.5em;
+		padding-bottom: 2em;
+		height: max-content;
 	}
-
+	h2{
+		margin: 0 2rem;
+	}
+	#form{
+		text-align: center;
+		font-size: 2em;
+	}
+	#linkContact{
+		border-top: 3px solid #E95420;
+		margin: 4em auto 1.5em auto;
+		font-size: 35px;
+		text-align: center;
+		height: max-content;
+		width: 720px;
+		max-width: calc(100% - 2em);
+		padding: 1.5em 1em 2.5em 1em;
+	}
 </style>
